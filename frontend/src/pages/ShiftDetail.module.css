@@ -1,0 +1,598 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+
+
+.title {
+  margin: 0;
+  color: #2d3748;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.error {
+  background: #fed7d7;
+  color: #c53030;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border: 1px solid #feb2b2;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #4a5568;
+  font-size: 1.1rem;
+}
+
+.shiftRequestsSection {
+  margin-bottom: 30px;
+}
+
+.sectionTitle {
+  font-size: 1.3rem;
+  color: #2d3748;
+  margin: 0 0 15px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.shiftRequestsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shiftRequestItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #f7fafc;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.requestEmployee {
+  font-weight: 600;
+  color: #2d3748;
+  flex: 1;
+}
+
+.requestTime {
+  color: #4a5568;
+  margin: 0 20px;
+  font-size: 0.9rem;
+}
+
+.requestStatus {
+  background: #e6fffa;
+  color: #2c7a7b;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.shiftsSection {
+  margin-bottom: 30px;
+}
+
+.noData {
+  text-align: center;
+  padding: 40px;
+  color: #718096;
+  font-style: italic;
+  background: #f7fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+/* ガントチャート */
+.ganttChart {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+.ganttHeader {
+  display: flex;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  width: 1200px;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.dayLabel {
+  width: 100px;
+  padding: 12px;
+  font-weight: 600;
+  color: #495057;
+  background: #e9ecef;
+  border-right: 1px solid #dee2e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.timeLabel {
+  flex: 1;
+  padding: 8px 4px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #6c757d;
+  border-right: 1px solid #dee2e6;
+  min-width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.ganttRow {
+  display: flex;
+  border-bottom: 1px solid #e9ecef;
+  width: 1200px;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.ganttRow:last-child {
+  border-bottom: none;
+}
+
+.ganttTimeline {
+  flex: 1;
+  position: relative;
+  height: 60px;
+  background: #f8f9fa;
+  width: 1100px;
+  flex-shrink: 0;
+}
+
+.ganttBar {
+  position: absolute;
+  top: 8px;
+  height: 44px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ganttBar:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ganttBarContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 4px 8px;
+  color: white;
+  font-size: 0.75rem;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.ganttTime {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.ganttDeleteButton {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 20px;
+  height: 20px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+
+.ganttBar:hover .ganttDeleteButton {
+  opacity: 1;
+}
+
+.ganttDeleteButton:hover {
+  background: #c82333;
+  transform: scale(1.1);
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.actionButton {
+  background: #4299e1;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.actionButton:hover {
+  background: #3182ce;
+}
+
+.deleteButton {
+  background: #e53e3e;
+}
+
+.deleteButton:hover {
+  background: #c53030;
+}
+
+/* モーダル */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal h2 {
+  margin: 0 0 15px 0;
+  color: #2d3748;
+  font-size: 1.5rem;
+}
+
+.selectedDate {
+  margin: 0 0 15px 0;
+  color: #4a5568;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+}
+
+.shiftRequestsList {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 10px;
+  background: #f7fafc;
+}
+
+.shiftRequestItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  margin-bottom: 8px;
+  background: white;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+}
+
+.shiftRequestItem:last-child {
+  margin-bottom: 0;
+}
+
+.requestEmployee {
+  font-weight: 600;
+  color: #2d3748;
+  flex: 1;
+}
+
+.requestTime {
+  color: #4a5568;
+  flex: 2;
+  text-align: center;
+}
+
+.requestStatus {
+  flex: 1;
+  text-align: right;
+  color: #38a169;
+  font-weight: 500;
+}
+
+.noRequests {
+  text-align: center;
+  color: #718096;
+  font-style: italic;
+  padding: 20px;
+}
+
+.shiftsList {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 10px;
+  background: #f7fafc;
+  margin-bottom: 20px;
+}
+
+.shiftItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.shiftItem:last-child {
+  margin-bottom: 0;
+}
+
+.shiftItem:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.shiftInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.shiftEmployee {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 1rem;
+}
+
+.shiftTime {
+  color: #4a5568;
+  font-size: 0.9rem;
+}
+
+.shiftBreak {
+  color: #718096;
+  font-size: 0.8rem;
+}
+
+.deleteShiftButton {
+  background: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+  margin-left: 12px;
+}
+
+.deleteShiftButton:hover {
+  background: #c53030;
+}
+
+.noShifts {
+  text-align: center;
+  color: #718096;
+  font-style: italic;
+  padding: 30px;
+  background: #f7fafc;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.modalActions {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.cancelButton,
+.submitButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.cancelButton {
+  background: #e2e8f0;
+  color: #4a5568;
+}
+
+.cancelButton:hover {
+  background: #cbd5e0;
+}
+
+.submitButton {
+  background: #4299e1;
+  color: white;
+}
+
+.submitButton:hover {
+  background: #3182ce;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .ganttChart {
+    font-size: 0.8rem;
+  }
+
+  .ganttHeader {
+    width: 800px;
+  }
+
+  .timeLabelHeader,
+  .timeLabel {
+    width: 80px;
+    padding: 8px 4px;
+  }
+
+  .employeeLabel {
+    min-width: 60px;
+    padding: 6px 2px;
+  }
+
+  .ganttRow {
+    width: 800px;
+    height: 60px;
+  }
+
+  .ganttTimeline {
+    width: 720px;
+    height: 60px;
+  }
+
+  .ganttBarContent {
+    font-size: 0.6rem;
+    padding: 2px 4px;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .actionButton {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .ganttChart {
+    font-size: 0.7rem;
+  }
+
+  .ganttHeader {
+    width: 600px;
+  }
+
+  .timeLabelHeader,
+  .timeLabel {
+    width: 60px;
+    padding: 6px 2px;
+  }
+
+  .employeeLabel {
+    min-width: 50px;
+    padding: 4px 1px;
+  }
+
+  .ganttRow {
+    width: 600px;
+    height: 50px;
+  }
+
+  .ganttTimeline {
+    width: 540px;
+    height: 50px;
+  }
+
+  .ganttBarContent {
+    font-size: 0.5rem;
+    padding: 1px 2px;
+  }
+} 

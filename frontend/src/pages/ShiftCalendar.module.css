@@ -1,0 +1,1185 @@
+/* コンテナ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ヘッダー */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.headerControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0;
+}
+
+.monthNavigation {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navButton {
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  color: #4a5568;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+}
+
+.navButton:hover {
+  background: #edf2f7;
+  transform: translateY(-1px);
+}
+
+.currentMonth {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+  min-width: 120px;
+  text-align: center;
+}
+
+.settingsButton {
+  background: #805ad5;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.settingsButton:hover {
+  background: #6b46c1;
+  transform: translateY(-1px);
+}
+
+/* エラーメッセージ */
+.error {
+  background: #fed7d7;
+  color: #c53030;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #feb2b2;
+}
+
+/* 読み込み中 */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  font-size: 1.2rem;
+  color: #718096;
+}
+
+/* カレンダー */
+.calendar {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+/* 曜日ヘッダー */
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #f7fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.weekday {
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 0.875rem;
+}
+
+/* 日付グリッド */
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+/* 日付セル */
+.day {
+  min-height: 120px;
+  border-right: 1px solid #f7fafc;
+  border-bottom: 1px solid #f7fafc;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.day:hover {
+  background-color: #f7fafc;
+}
+
+.day:last-child {
+  border-right: none;
+}
+
+.day:nth-child(7n) {
+  border-right: none;
+}
+
+.day:nth-child(n+36) {
+  border-bottom: none;
+}
+
+.dayNumber {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+/* 他の月の日付 */
+.otherMonth {
+  background-color: #fafafa;
+}
+
+.otherMonth .dayNumber {
+  color: #a0aec0;
+}
+
+/* 今日の日付 */
+.today {
+  background-color: #ebf8ff;
+}
+
+.today .dayNumber {
+  background: #3182ce;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+/* 日付サマリー表示 */
+.daySummary {
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.shiftCount, .requestCount {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.shiftCount {
+  background: #e3f2fd;
+  color: #1976d2;
+  border: 1px solid #bbdefb;
+}
+
+.requestCount {
+  background: #fef5e7;
+  color: #d69e2e;
+  border: 1px solid #f6e05e;
+}
+
+.countIcon {
+  font-size: 0.8rem;
+}
+
+.countText {
+  font-size: 0.7rem;
+}
+
+/* 詳細モーダル */
+.detailContent {
+  margin: 1rem 0;
+}
+
+.detailSection {
+  margin-bottom: 1.5rem;
+}
+
+.detailSection h3 {
+  font-size: 1.1rem;
+  color: #2d3748;
+  margin: 0 0 0.5rem 0;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.detailList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: #f7fafc;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.detailName {
+  font-weight: 600;
+  color: #2d3748;
+  flex: 1;
+}
+
+.detailTime {
+  color: #4a5568;
+  font-size: 0.9rem;
+  margin: 0 1rem;
+}
+
+.noData {
+  text-align: center;
+  padding: 2rem;
+  color: #718096;
+  font-style: italic;
+}
+
+/* ガントチャート */
+.shiftList {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.shiftList h3 {
+  margin: 0 0 1rem 0;
+  color: #2d3748;
+  font-size: 1.1rem;
+}
+
+.ganttChart {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+.ganttHeader {
+  display: flex;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  width: 1200px;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.timeLabelHeader {
+  width: 100px;
+  padding: 12px;
+  font-weight: 600;
+  color: #495057;
+  background: #e9ecef;
+  border-right: 1px solid #dee2e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.employeeLabel {
+  flex: 1;
+  padding: 8px 4px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #6c757d;
+  border-right: 1px solid #dee2e6;
+  min-width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+.timeLabel {
+  width: 100px;
+  padding: 12px;
+  font-weight: 600;
+  color: #495057;
+  background: #e9ecef;
+  border-right: 1px solid #dee2e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ganttRow {
+  display: flex;
+  border-bottom: 1px solid #e9ecef;
+  width: 1200px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  height: 80px;
+}
+
+.ganttRow:last-child {
+  border-bottom: none;
+}
+
+.ganttTimeline {
+  flex: 1;
+  position: relative;
+  height: 80px;
+  background: #f8f9fa;
+  width: 1100px;
+  flex-shrink: 0;
+}
+
+.ganttBar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 1px;
+}
+
+.ganttBar:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ganttBarContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 4px 8px;
+  color: white;
+  font-size: 0.7rem;
+  text-align: center;
+  line-height: 1.2;
+  overflow: hidden;
+}
+
+.ganttTime {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ganttDeleteButton {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 20px;
+  height: 20px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+
+.ganttBar:hover .ganttDeleteButton {
+  opacity: 1;
+}
+
+.ganttDeleteButton:hover {
+  background: #c82333;
+  transform: scale(1.1);
+}
+
+.noShifts {
+  text-align: center;
+  padding: 2rem;
+  color: #718096;
+  font-style: italic;
+}
+
+.ganttChart h3 {
+  margin: 0 0 1rem 0;
+  color: #2d3748;
+  font-size: 1.1rem;
+}
+
+.timeRangeSettings {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #f7fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.timeRangeInput {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timeRangeInput label {
+  font-weight: 500;
+  color: #4a5568;
+  font-size: 0.9rem;
+}
+
+.timeInput {
+  width: 60px;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.timeInput:focus {
+  outline: none;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+.timeRangeInput span {
+  color: #4a5568;
+  font-weight: 500;
+}
+
+
+
+
+
+.timeHeader {
+  display: flex;
+  background: #f7fafc;
+  border-bottom: 1px solid #e2e8f0;
+  width: 800px;
+}
+
+/* 縦線は技術的に正確に配置するのが困難なため削除 */
+
+.employeeLabel {
+  width: 120px;
+  min-width: 120px;
+  padding: 0.75rem;
+  font-weight: 600;
+  color: #2d3748;
+  border-right: 1px solid #e2e8f0;
+  background: #edf2f7;
+}
+
+.timeHeaderCell {
+  flex: 1;
+  padding: 0.5rem 0.25rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #4a5568;
+  min-width: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  flex-shrink: 0;
+}
+
+.dayLabel {
+  font-size: 0.6rem;
+  color: #e53e3e;
+  font-weight: 600;
+}
+
+.ganttBody {
+  max-height: 300px;
+  overflow-y: auto;
+  width: 800px;
+}
+
+.ganttRow {
+  display: flex;
+  border-bottom: 1px solid #e2e8f0;
+  min-height: 40px;
+  width: 800px;
+}
+
+.ganttRow:last-child {
+  border-bottom: none;
+}
+
+.employeeName {
+  width: 120px;
+  min-width: 120px;
+  padding: 0.75rem;
+  font-weight: 500;
+  color: #2d3748;
+  border-right: 1px solid #e2e8f0;
+  background: #f7fafc;
+  display: flex;
+  align-items: center;
+}
+
+.shiftTimeline {
+  flex: 1;
+  position: relative;
+  background: #fafafa;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* 縦線は技術的に正確に配置するのが困難なため削除 */
+
+.shiftBar {
+  position: absolute;
+  height: 24px;
+  background: linear-gradient(135deg, #3182ce 0%, #2c5aa0 100%);
+  border-radius: 4px;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.shiftBar:hover {
+  background: linear-gradient(135deg, #2c5aa0 0%, #1a365d 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.shiftTimeText {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.noShiftsRow {
+  display: flex;
+  border-bottom: 1px solid #e2e8f0;
+  min-height: 40px;
+}
+
+.noShiftsMessage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #718096;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* アクションボタン */
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f7fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.actionButton {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #4CAF50;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionButton:hover {
+  background: #45a049;
+  transform: translateY(-1px);
+}
+
+/* シフト一覧 */
+.shiftSummary {
+  margin: 1rem 0;
+}
+
+.shiftSummary h3 {
+  margin: 0 0 0.5rem 0;
+  color: #2d3748;
+  font-size: 1.1rem;
+}
+
+.shiftList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.shiftItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: #f7fafc;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.shiftName {
+  font-weight: 600;
+  color: #2d3748;
+  flex: 1;
+}
+
+.shiftTime {
+  color: #4a5568;
+  font-size: 0.9rem;
+  margin: 0 1rem;
+}
+
+.deleteButton {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background: #f56565;
+  color: white;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.deleteButton:hover {
+  background: #e53e3e;
+}
+
+.noShifts {
+  text-align: center;
+  padding: 1rem;
+  color: #718096;
+  font-style: italic;
+  background: #f7fafc;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+/* シフト表示 */
+.shifts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.shiftItem {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.shiftName {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shiftTime {
+  font-size: 0.7rem;
+  opacity: 0.9;
+}
+
+.deleteShiftButton {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.deleteShiftButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+
+
+/* モーダル */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* シフト追加モーダルはより手前に表示 */
+.addShiftModal {
+  z-index: 2000;
+}
+
+.modal {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 95%;
+  max-width: 900px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+}
+
+.modal h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 0.5rem 0;
+}
+
+.selectedDate {
+  font-size: 1rem;
+  color: #718096;
+  margin: 0 0 1.5rem 0;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.input,
+.select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* 数値入力フィールドの矢印を削除 */
+.input[type="number"]::-webkit-outer-spin-button,
+.input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.helpText {
+  display: block;
+  font-size: 0.75rem;
+  color: #718096;
+  margin-top: 0.25rem;
+  font-style: italic;
+}
+
+/* シフト希望表示 */
+.shiftRequestsList {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 0.5rem;
+  background: #f7fafc;
+}
+
+.shiftRequestItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background: white;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.875rem;
+}
+
+.shiftRequestItem:last-child {
+  margin-bottom: 0;
+}
+
+.requestEmployee {
+  font-weight: 600;
+  color: #2d3748;
+  flex: 1;
+}
+
+.requestTime {
+  color: #4a5568;
+  margin: 0 0.5rem;
+  flex: 2;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.requestStatus {
+  background: #4299e1;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.noRequests {
+  text-align: center;
+  color: #718096;
+  font-style: italic;
+  padding: 1rem;
+}
+
+.modalActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.cancelButton,
+.submitButton {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.cancelButton {
+  background: #f7fafc;
+  color: #4a5568;
+  border: 1px solid #e2e8f0;
+}
+
+.cancelButton:hover {
+  background: #edf2f7;
+}
+
+.submitButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.submitButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .headerControls {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  
+  .settingsButton {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .monthNavigation {
+    justify-content: center;
+  }
+
+
+
+  .day {
+    min-height: 100px;
+    padding: 0.25rem;
+  }
+
+  .dayNumber {
+    font-size: 0.8rem;
+  }
+
+  .shiftItem {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.7rem;
+  }
+
+  .shiftTime {
+    font-size: 0.65rem;
+  }
+
+
+
+  .modal {
+    margin: 1rem;
+    padding: 1.5rem;
+    width: 98%;
+    max-width: none;
+    max-height: 90vh;
+  }
+
+  .ganttChart {
+    padding: 0.75rem;
+  }
+
+  .timeRangeSettings {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .ganttBody {
+    max-height: 200px;
+    min-width: 600px;
+  }
+
+  .timeHeader {
+    min-width: 600px;
+  }
+
+  .employeeLabel,
+  .employeeName {
+    width: 100px;
+    min-width: 100px;
+    font-size: 0.8rem;
+  }
+
+  .timeHeaderCell {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.1rem;
+    gap: 0.05rem;
+  }
+  
+  .dayLabel {
+    font-size: 0.5rem;
+  }
+
+  .shiftBar {
+    height: 20px;
+    font-size: 0.65rem;
+    padding: 0 0.25rem;
+  }
+
+  .shiftTimeText {
+    font-size: 0.6rem;
+  }
+
+  /* 縦線は技術的に正確に配置するのが困難なため削除 */
+
+  .actionButtons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .actionButton {
+    width: 100%;
+  }
+
+  .modalActions {
+    flex-direction: column;
+  }
+
+  .cancelButton,
+  .submitButton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .weekday {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.8rem;
+  }
+
+  .day {
+    min-height: 80px;
+  }
+
+  .shifts {
+    gap: 0.1rem;
+  }
+
+  .shiftItem {
+    flex-direction: column;
+    gap: 0.1rem;
+    text-align: center;
+  }
+
+  .modal {
+    margin: 0.5rem;
+    padding: 1rem;
+    width: 99%;
+    max-height: 95vh;
+  }
+
+  .ganttChart {
+    padding: 0.5rem;
+  }
+
+  .timeRangeSettings {
+    gap: 0.5rem;
+  }
+  
+  .timeRangeInput {
+    gap: 0.25rem;
+  }
+  
+  .timeInput {
+    width: 50px;
+    padding: 0.25rem;
+    font-size: 0.8rem;
+  }
+  
+  .ganttBody {
+    max-height: 150px;
+    min-width: 400px;
+  }
+
+  .timeHeader {
+    min-width: 400px;
+  }
+
+  .employeeLabel,
+  .employeeName {
+    width: 80px;
+    min-width: 80px;
+    font-size: 0.7rem;
+    padding: 0.5rem 0.25rem;
+  }
+
+  .timeHeaderCell {
+    font-size: 0.6rem;
+    padding: 0.25rem 0.05rem;
+    min-width: 20px;
+    gap: 0.02rem;
+  }
+  
+  .dayLabel {
+    font-size: 0.45rem;
+  }
+
+  .shiftBar {
+    height: 18px;
+    font-size: 0.6rem;
+    padding: 0 0.2rem;
+  }
+
+  .shiftTimeText {
+    font-size: 0.55rem;
+  }
+
+  .ganttContainer {
+    font-size: 0.8rem;
+  }
+
+  /* 縦線は技術的に正確に配置するのが困難なため削除 */
+
+  .actionButtons {
+    gap: 0.25rem;
+  }
+
+  .actionButton {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+} 
